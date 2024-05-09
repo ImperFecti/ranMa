@@ -22,7 +22,7 @@
                             <th scope="row"><?= $i++; ?></th> <!-- perulangan untuk nomor data -->
                             <!-- perulangan untuk mengambil data comic -->
                             <td><img src="/img/<?= $c['sampul']; ?>" alt="" class="sampul"></td>
-                            <td><?php $c['judul']; ?></td>
+                            <td><?= $c['judul']; ?></td>
                             <td>
                                 <a href="" class="btn btn-success">Detail</a>
                             </td>
