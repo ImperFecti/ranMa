@@ -12,6 +12,5 @@ $routes->get('/codeigniter', 'Home::index');
 $routes->get('/', 'Pages::index');
 $routes->get('/about', 'Pages::about');
 $routes->get('/contact', 'Pages::contact');
-//comic route
-$routes->get('/comic', 'Comic::index');
-$routes->get('/comic/(:segment)', 'Comic::detail/$1');
+//laporan route
+$routes->get('/laporan', 'Laporan::index');
