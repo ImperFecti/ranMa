@@ -17,14 +17,24 @@ class Comic extends BaseController
     public function index()
     {
         //memanggil semua data yang ada di database
-        $comic = $this->comicModel->findAll();
+
 
         $data = [
             'title' => 'Comic | CI4APP',
-            'comic' => $comic
+            'comic' => $comic = $this->comicModel->getComic()
         ];
 
 
         return view('comic/index', $data);
+    }
+
+    public function detail($slug)
+    {
+        $data = [
+            'title' => 'Detail Comic | CI4APP',
+            'comic' => $comic = $this->comicModel->getComic($slug)
+        ];
+
+        return view('comic/detail', $data);
     }
 }
