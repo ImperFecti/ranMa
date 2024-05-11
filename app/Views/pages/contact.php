@@ -1,18 +1,24 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <h2>Contact Us</h2>
-            <?php foreach ($alamat as $a) : ?>
-                <ul>
-                    <li><?= $a['tipe']; ?></li>
-                    <li><?= $a['alamat']; ?></li>
-                    <li><?= $a['kota']; ?></li>
-                </ul>
-            <?php endforeach; ?>
+<br>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            Lokasi Masjid
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Masjid Al-Hidayah</h5>
+            <p class="card-text">Jl. Dolor Sit Amet No. 123</p>
+            <p class="card-text"><b>Bekasi</b></p>
+            <a href="#google-map-location-link" class="btn btn-primary">Google Maps</a>
+            <a href="#whatsapp-contact-link" class="btn btn-success">Whatsapp</a>
+        </div>
+        <div class="card-footer text-muted">
+            CI4APP
         </div>
     </div>
+    <br>
 </div>
+
 <?= $this->endSection(); ?>
