@@ -15,5 +15,47 @@
             </p>
         </div>
     </div>
-</div>
-<?= $this->endSection(); ?>
+    <br>
+    <h2>Website Development Requirement</h2>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Source Code</h5>
+                    <p class="card-text">Source code website ini dapat dilihat dan di unduh di repository github. Bisa menggunakan pull request dari git bash untuk bisa mendapatkan source code website ini.</p>
+                    <a href="https://github.com/ImperFecti/ci4" class="btn btn-primary">Repository Github</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Framework</h5>
+                    <p class="card-text">Memilih framework CodeIgniter4 untuk pengembangan website karena kecepatan, keamanan, dan kemudahan penggunaannya yang mempercepat proses pengembangan.</p>
+                    <a href="https://github.com/codeigniter4/CodeIgniter4" class="btn btn-primary">Repository Github</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">COMPOSER Dependency Manager for PHP</h5>
+                    <p class="card-text">Composer digunakan sebagai manajer dependensi untuk website karena memungkinkan pengelolaan dan instalasi paket-paket PHP dengan mudah dan efisien.</p>
+                    <a href="https://getcomposer.org/" class="btn btn-primary">Get Composer</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">XAMPP</h5>
+                    <p class="card-text">XAMPP memungkinkan pengembang untuk dengan cepat membuat lingkungan pengembangan web lokal yang terintegrasi dengan Apache, MySQL, PHP, dan Perl, mempercepat proses pengembangan website.</p>
+                    <a href="https://www.apachefriends.org/" class="btn btn-primary">Get XAMPP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?= $this->endSection(); ?>
