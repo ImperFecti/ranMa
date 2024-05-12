@@ -17,6 +17,15 @@
             <li class="nav-item">
                 <a class="nav-link" href="/laporan">Laporan</a>
             </li>
+            <?php if (logged_in()) : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            <?php else : ?>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            <?php endif; ?>
         </ul>
         <span class="navbar-text">
             Website Laporan Keuangan Masjid Al-Hidayah
