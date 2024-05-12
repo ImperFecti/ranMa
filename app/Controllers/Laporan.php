@@ -25,4 +25,26 @@ class Laporan extends BaseController
 
         return view('laporan/index', $data);
     }
+
+    public function create()
+    {
+        $data = [
+            'title' => 'CI4APP | Tambah Data'
+        ];
+        return view('laporan/create', $data);
+    }
+
+    public function save()
+    {
+        $this->laporanModel->save([
+            'masuk' => $this->request->getVar('masuk'),
+            'keluar' => $this->request->getVar('keluar'),
+            'saldo' => $this->request->getVar('saldo'),
+            'rincianmasuk' => $this->request->getVar('rincianmasuk'),
+            'rinciankeluar' => $this->request->getVar('rinciankeluar'),
+            'tanggal' => $this->request->getVar('tanggal')
+        ]);
+
+        return redirect()->to('/laporan');
+    }
 }

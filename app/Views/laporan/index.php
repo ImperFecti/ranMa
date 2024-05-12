@@ -5,6 +5,9 @@
     <div class="row">
         <div class="col">
             <h1 class="mt-2">Laporan Keuangan</h1>
+            <?php if (logged_in()) : ?>
+                <a class="btn btn-primary mb-3" href="/create" role="button">Tambah Data Laporan</a>
+            <?php endif; ?>
             <!-- tabel laporan keuangan -->
             <table class="table">
                 <thead class="thead-dark">

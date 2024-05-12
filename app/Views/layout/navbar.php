@@ -17,18 +17,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="/laporan">Laporan</a>
             </li>
+        </ul>
+        <span class="navbar-text mr-md-3">
+            Website Laporan Keuangan Masjid Al-Hidayah
+        </span>
+        <ul class="navbar-nav mr-md-3">
             <?php if (logged_in()) : ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">Logout</a>
+                    <a class="btn btn-danger" href="/logout" role="button">Logout</a>
                 </li>
             <?php else : ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">Login</a>
+                    <a class="btn btn-success" href="/login" role="button">Login</a>
                 </li>
             <?php endif; ?>
         </ul>
-        <span class="navbar-text">
-            Website Laporan Keuangan Masjid Al-Hidayah
-        </span>
     </div>
 </nav>

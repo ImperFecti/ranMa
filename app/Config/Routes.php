@@ -15,3 +15,5 @@ $routes->get('/about', 'Home::about');
 $routes->get('/contact', 'Home::contact');
 //laporan route
 $routes->get('/laporan', 'Laporan::index');
+$routes->get('/create', 'Laporan::create');
+$routes->post('/save', 'Laporan::save');
