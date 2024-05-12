@@ -8,9 +8,10 @@ use CodeIgniter\Router\RouteCollection;
 
 //route to codeigniter welcome message
 $routes->get('/codeigniter', 'Home::index');
+
 //home route
-$routes->get('/', 'Pages::index');
-$routes->get('/about', 'Pages::about');
-$routes->get('/contact', 'Pages::contact');
+$routes->get('/', 'Home::index');
+$routes->get('/about', 'Home::about');
+$routes->get('/contact', 'Home::contact');
 //laporan route
 $routes->get('/laporan', 'Laporan::index');

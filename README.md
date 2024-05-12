@@ -30,11 +30,11 @@ and any database settings.
 
 ## Important Change with index.php
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
+`index.php` is no longer in the root of the project! It has been moved inside the _public_ folder,
 for better security and separation of components.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
+This means that you should configure your web server to "point" to your project's _public_ folder, and
+not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter _public/..._, as the rest of your logic and the
 framework are exposed.
 
 **Please** read the user guide for a better explanation of how CI4 works!
@@ -66,3 +66,20 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+
+## This Website Development Requirements
+
+Here is what you need to download for the first time if you want to develop this web site with my latest source code :
+
+- [Composer 2.7.5](https://getcomposer.org/)
+- [CodeIgniter 4 4.5.1](https://github.com/codeigniter4/CodeIgniter4/releases/tag/v4.5.1)
+- [XAMPP 8.2.12 Windows](https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/8.2.12/)
+- Download latest [dummy database and .env](https://drive.google.com/drive/folders/1orcADcqGKPP-oWp1Ea5wPguZDqEHjKtG?usp=sharing)
+- [Git](https://git-scm.com/downloads) bash
+
+Tutorial that I have used as a reference :
+
+- [TUTORIAL CODEIGNITER 4 Playlist](https://youtube.com/playlist?list=PLFIM0718LjIUkkIq1Ub6B5dYNb6IlMvtc&si=McQAoV1AYjdn0oTP)
+- [Membuat Sistem Login & Registrasi dengan CodeIgniter 4 (Menggunakan Library Myth/Auth)](https://youtu.be/3BFyr6VwKeI?si=PQCD68dRa1Y22xIW)
+
+Thx to : [Bootstrap v4.5](https://getbootstrap.com/docs/4.5/getting-started/introduction/), [MDBootsrap](https://mdbootstrap.com/), [WebProgrammingUNPAS by Sandika Galih](https://www.youtube.com/@sandhikagalihWPU) for helping me to build my very first website !!

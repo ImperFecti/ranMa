@@ -9,8 +9,12 @@
         </div>
         <div class="card-body">
             <h5 class="card-title">Masjid Al-Hidayah</h5>
-            <p class="card-text">Jl. Dolor Sit Amet No. 123</p>
-            <p class="card-text"><b>Bekasi</b></p>
+            <p class="card-text">
+                Jl. Pegangsaan Timur No. 123
+                <br>
+                RT 002/RW 011 17111
+            </p>
+            <p class="card-text"><b>Bekasi, Jawa Barat, Indonesia</b></p>
             <a href="#google-map-location-link" class="btn btn-primary">Google Maps</a>
             <a href="#whatsapp-contact-link" class="btn btn-success">Whatsapp</a>
         </div>
