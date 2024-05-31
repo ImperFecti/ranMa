@@ -6,8 +6,8 @@ use App\Models\LaporanModel;
 
 class Laporan extends BaseController
 {
-    //deklarasi contruct model laporan
     protected $laporanModel;
+
     public function __construct()
     {
         $this->laporanModel = new LaporanModel();
@@ -15,13 +15,27 @@ class Laporan extends BaseController
 
     public function index()
     {
-        $laporan = $this->laporanModel->findAll();
+        // method untuk sorting data tabel laporan keuangan
+        $sortColumn = $this->request->getVar('sort') ?? 'tanggal';
+        $sortOrder = $this->request->getVar('order') ?? 'asc';
+
+        // Menambahkan validasi kolom yang diizinkan untuk diurutkan
+        $allowedSortColumns = ['tanggal', 'masuk', 'keluar'];
+
+        // Validasi kolom pengurutan
+        if (!in_array($sortColumn, $allowedSortColumns)) {
+            $sortColumn = 'tanggal';
+        }
+
+        // Mengambil data dari model dengan pengurutan
+        $laporan = $this->laporanModel->orderBy($sortColumn, $sortOrder)->findAll();
 
         $data = [
             'title' => 'Laporan',
-            'laporan' => $laporan
+            'laporan' => $laporan,
+            'sortColumn' => $sortColumn,
+            'sortOrder' => $sortOrder
         ];
-
 
         return view('laporan/index', $data);
     }
@@ -34,6 +48,7 @@ class Laporan extends BaseController
         return view('laporan/create', $data);
     }
 
+    // method untuk input data ke database
     public function save()
     {
         $this->laporanModel->save([

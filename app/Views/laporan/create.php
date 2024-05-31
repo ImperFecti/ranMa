@@ -4,7 +4,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col">
-            <h1>From Tambah Data Laporan</h1>
+            <div class="jumbotron jumbotron-fluid bg-transparent">
+                <div class="container">
+                    <h1 class="display-4">Form Tambah Data</h1>
+                    <p class="lead">Formulir ini digunakan untuk menambahkan data laporan keuangan masjid. Harap isi semua informasi yang diperlukan dengan benar.</p>
+                </div>
+            </div>
             <form action="/save" method="post">
                 <?= csrf_field(); ?>
                 <div class="form-group">
@@ -31,7 +36,7 @@
                     <label for="tanggal">Tanggal</label>
                     <input type="date" class="form-control" id="tanggal" name="tanggal">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="button-33" role="button">Submit</button>
             </form>
 
         </div>

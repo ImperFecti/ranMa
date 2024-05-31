@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 
 //route to codeigniter welcome message
-$routes->get('/codeigniter', 'Home::index');
+$routes->get('/codeigniter', 'Home::codeigniter');
 
 //home route
 $routes->get('/', 'Home::index');

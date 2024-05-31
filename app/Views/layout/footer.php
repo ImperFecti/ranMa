@@ -1,25 +1,19 @@
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-body-tertiary text-muted">
-        <!-- line breaker -->
-        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
-            <div class="me-5 d-none d-lg-block"></div>
-        </section>
-
 
         <!-- Section: Links  -->
-        <section class="">
-            <div class="container text-center text-md-start mt-5">
+        <section class="f">
+            <div class="container text-center text-md-start mt-5 p-2">
                 <!-- Grid row -->
                 <div class="row mt-3">
                     <!-- Grid column -->
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Company name
+                            <i class="fas fa-gem me-3"></i>ranMa
                         </h6>
                         <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.
+                            ranMa adalah platform yang memudahkan pengurus Masjid Al-Hidayah dalam mencatat, melacak, dan melaporkan transaksi keuangan secara efisien dan transparan.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -28,19 +22,22 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Products
+                            Website Development Requirements
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Angular</a>
+                            <a href="/codeigniter" class="text-reset">Codeigniter</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">React</a>
+                            <a href="https://getbootstrap.com/docs/4.5/" class="text-reset">Bootstrap V4.5</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Vue</a>
+                            <a href="https://mdbootstrap.com/" class="text-reset">MDBootstrap</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Laravel</a>
+                            <a href="https://github.com/lonnieezell/myth-auth" class="text-reset">Myth:Auth</a>
+                        </p>
+                        <p>
+                            <a href="https://www.apachefriends.org/" class="text-reset">XAMPP</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -49,19 +46,19 @@
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Useful links
+                            Navigation
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Pricing</a>
+                            <a href="/" class="text-reset">Home </a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Settings</a>
+                            <a href="/about" class="text-reset">About</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Orders</a>
+                            <a href="/contact" class="text-reset">Contact</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Help</a>
+                            <a href="/laporan" class="text-reset">Laporan</a>
                         </p>
                     </div>
                     <!-- Grid column -->

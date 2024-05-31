@@ -21,10 +21,15 @@ class Home extends BaseController
     }
 
     public function contact()
-    {;
+    {
         $data = [
             'title' => 'CI4APP | Contact Us'
         ];
         return view('pages/contact', $data);
+    }
+
+    public function codeigniter()
+    {
+        return view('pages/welcome_message');
     }
 }

@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 <br>
 <div class="container">
-    <div class="card text-center">
+    <div class="card text-center fade-in delay-1">
         <div class="card-header">
             Lokasi Masjid
         </div>
@@ -19,7 +19,7 @@
             <a href="#whatsapp-contact-link" class="btn btn-success">Whatsapp</a>
         </div>
         <div class="card-footer text-muted">
-            CI4APP
+            ranMa
         </div>
     </div>
     <br>

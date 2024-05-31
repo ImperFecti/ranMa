@@ -2,7 +2,7 @@
 
 <?= $this->section('content'); ?>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row fade-in delay-1">
         <div class="col">
             <h1>About This Website</h1>
             <p class="lead">
@@ -16,21 +16,21 @@
         </div>
     </div>
     <br>
-    <h2>Website Development Requirement</h2>
+    <h2 class="fade-in delay-2">Website Development Requirement</h2>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 fade-in delay-3">
             <div class="card">
                 <div class="card-header text-center">
-                    CI4APP Source Code
+                    ranMa Source Code
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Github</h5>
                     <p class="card-text">Source code website ini dapat dilihat dan di unduh di repository github. Bisa menggunakan pull request dari git bash untuk bisa mendapatkan source code website ini.</p>
-                    <a href="https://github.com/ImperFecti/ci4" class="btn btn-primary">Repository Github</a>
+                    <a href="https://github.com/ImperFecti/ranMa" class="btn btn-primary">Repository Github</a>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 fade-in delay-4">
             <div class="card text-right">
                 <div class="card-header text-center">
                     Framework
@@ -45,7 +45,7 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-6 fade-in delay-5">
             <div class="card">
                 <div class="card-header text-center">
                     PHP Dependency Manager
@@ -57,7 +57,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 fade-in delay-6">
             <div class="card text-right">
                 <div class="card-header text-center">
                     Web Development
@@ -71,7 +71,7 @@
         </div>
     </div>
     <br>
-    <div class="card text-center">
+    <div class="card text-center fade-in delay-7">
         <div class="card-header">
             Login/Register System
         </div>
@@ -85,7 +85,7 @@
             <a href="https://github.com/lonnieezell/myth-auth" class="btn btn-primary">Repository Github</a>
         </div>
         <div class="card-footer text-muted">
-            CI4APP
+            ranMa
         </div>
     </div>
 </div>

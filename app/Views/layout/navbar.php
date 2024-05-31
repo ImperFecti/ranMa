@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/codeigniter">CI4APP</a>
+<nav class="navbar sticky-top navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="/codeigniter">ranMa</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,11 +24,7 @@
         <ul class="navbar-nav mr-md-3">
             <?php if (logged_in()) : ?>
                 <li class="nav-item">
-                    <a class="btn btn-danger" href="/logout" role="button">Logout</a>
-                </li>
-            <?php else : ?>
-                <li class="nav-item">
-                    <a class="btn btn-success" href="/login" role="button">Login</a>
+                    <a class="button-24" href="/logout" role="button">Logout</a>
                 </li>
             <?php endif; ?>
         </ul>
