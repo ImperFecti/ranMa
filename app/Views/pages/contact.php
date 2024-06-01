@@ -2,14 +2,14 @@
 
 <?= $this->section('content'); ?>
 <br>
-<div class="container">
+<div class="container p-4">
     <div class="card text-center fade-in delay-1">
-        <div class="card-header">
+        <div class="card-header gillsans">
             Lokasi Masjid
         </div>
-        <div class="card-body">
+        <div class="card-body txtsh">
             <h5 class="card-title">Masjid Al-Hidayah</h5>
-            <p class="card-text">
+            <p class="card-text couriernew">
                 Jl. Pegangsaan Timur No. 123
                 <br>
                 RT 002/RW 011 17111

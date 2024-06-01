@@ -2,10 +2,10 @@
 
 <?= $this->section('content'); ?>
 <div class="container-fluid">
-    <div class="row fade-in delay-1">
-        <div class="col">
+    <div class="row fade-in">
+        <div class="col m-4">
             <h1>About This Website</h1>
-            <p class="lead">
+            <p class="lead couriernew">
                 Kami telah mengembangkan sebuah website dengan tujuan utama untuk menampilkan laporan keuangan Masjid Al-Hidayah secara transparan kepada jamaah dan pihak yang berkepentingan.
             </p>
             <p class="text-justify">
@@ -15,77 +15,78 @@
             </p>
         </div>
     </div>
-    <br>
-    <h2 class="fade-in delay-2">Website Development Requirement</h2>
-    <div class="row">
-        <div class="col-sm-6 fade-in delay-3">
-            <div class="card">
-                <div class="card-header text-center">
-                    ranMa Source Code
+    <div class="m-4">
+        <h2 class="fade-in delay-2 pb-3 text-center">Website Development Requirement</h2>
+        <div class="row">
+            <div class="col-sm-6 fade-in delay-3">
+                <div class="card">
+                    <div class="card-header text-center gillsans">
+                        ranMa Source Code
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">Github</h5>
+                        <p class="card-text couriernew txtsh">Source code website ini dapat dilihat dan di unduh di repository github. Bisa menggunakan pull request dari git bash untuk bisa mendapatkan source code website ini.</p>
+                        <a href="https://github.com/ImperFecti/ranMa" class="btn btn-primary">Repository Github</a>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">Github</h5>
-                    <p class="card-text">Source code website ini dapat dilihat dan di unduh di repository github. Bisa menggunakan pull request dari git bash untuk bisa mendapatkan source code website ini.</p>
-                    <a href="https://github.com/ImperFecti/ranMa" class="btn btn-primary">Repository Github</a>
+            </div>
+            <div class="col-sm-6 fade-in delay-4">
+                <div class="card text-right">
+                    <div class="card-header text-center gillsans">
+                        Framework
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">CodeIgniter 4</h5>
+                        <p class="card-text couriernew txtsh">Memilih framework CodeIgniter4 untuk pengembangan website karena kecepatan, keamanan, dan kemudahan penggunaannya yang mempercepat proses pengembangan.</p>
+                        <a href="https://codeigniter.com/user_guide/installation/installing_composer.html" class="btn btn-primary">How To Install</a>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6 fade-in delay-4">
-            <div class="card text-right">
-                <div class="card-header text-center">
-                    Framework
+        <br>
+        <div class="row">
+            <div class="col-sm-6 fade-in delay-5">
+                <div class="card">
+                    <div class="card-header text-center gillsans">
+                        PHP Dependency Manager
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">COMPOSER</h5>
+                        <p class="card-text couriernew txtsh">Composer digunakan sebagai manajer dependensi untuk website karena memungkinkan pengelolaan dan instalasi paket-paket PHP dengan mudah dan efisien.</p>
+                        <a href="https://getcomposer.org/" class="btn btn-primary">Get Composer</a>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">CodeIgniter 4</h5>
-                    <p class="card-text">Memilih framework CodeIgniter4 untuk pengembangan website karena kecepatan, keamanan, dan kemudahan penggunaannya yang mempercepat proses pengembangan.</p>
-                    <a href="https://codeigniter.com/user_guide/installation/installing_composer.html" class="btn btn-primary">How To Install</a>
+            </div>
+            <div class="col-sm-6 fade-in delay-6">
+                <div class="card text-right">
+                    <div class="card-header text-center gillsans">
+                        Web Development
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">XAMPP</h5>
+                        <p class="card-text couriernew txtsh">XAMPP memungkinkan pengembang untuk dengan cepat membuat lingkungan pengembangan web lokal yang terintegrasi dengan Apache, MySQL, PHP, dan Perl, mempercepat proses pengembangan website.</p>
+                        <a href="https://www.apachefriends.org/" class="btn btn-primary">Get XAMPP</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-6 fade-in delay-5">
-            <div class="card">
-                <div class="card-header text-center">
-                    PHP Dependency Manager
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">COMPOSER</h5>
-                    <p class="card-text">Composer digunakan sebagai manajer dependensi untuk website karena memungkinkan pengelolaan dan instalasi paket-paket PHP dengan mudah dan efisien.</p>
-                    <a href="https://getcomposer.org/" class="btn btn-primary">Get Composer</a>
-                </div>
+        <br>
+        <div class="card text-center fade-in delay-7">
+            <div class="card-header gillsans">
+                Login/Register System
             </div>
-        </div>
-        <div class="col-sm-6 fade-in delay-6">
-            <div class="card text-right">
-                <div class="card-header text-center">
-                    Web Development
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">XAMPP</h5>
-                    <p class="card-text">XAMPP memungkinkan pengembang untuk dengan cepat membuat lingkungan pengembangan web lokal yang terintegrasi dengan Apache, MySQL, PHP, dan Perl, mempercepat proses pengembangan website.</p>
-                    <a href="https://www.apachefriends.org/" class="btn btn-primary">Get XAMPP</a>
-                </div>
+            <div class="card-body">
+                <h5 class="card-title">Myth:Auth</h5>
+                <p class="card-text couriernew txtsh">
+                    Untuk mempermudah pembuatan sistem Login/Register adalah pilihan yang tepat untuk menggunakan library <b>Myth:Auth</b> sebagai template.
+                    <br>
+                    Dengan menggunakan library <b>Myth:Auth</b> dan sistem yang telah dirancang sedemikian rupa oleh <a href="https://github.com/lonnieezell/" class="text-decoration-none">Lonnie Ezell</a> perancang dari library <b>Myth:Auth</b> sekaligus orang yang ikut mendevelop framework <b>CodeIgniter4</b> ini.
+                </p>
+                <a href="https://github.com/lonnieezell/myth-auth" class="btn btn-primary">Repository Github</a>
             </div>
-        </div>
-    </div>
-    <br>
-    <div class="card text-center fade-in delay-7">
-        <div class="card-header">
-            Login/Register System
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Myth:Auth</h5>
-            <p class="card-text">
-                Untuk mempermudah pembuatan sistem Login/Register adalah pilihan yang tepat untuk menggunakan library <b>Myth:Auth</b> sebagai template.
-                <br>
-                Dengan menggunakan library <b>Myth:Auth</b> dan sistem yang telah dirancang sedemikian rupa oleh <a href="https://github.com/lonnieezell/" class="text-decoration-none">Lonnie Ezell</a> perancang dari library <b>Myth:Auth</b> sekaligus orang yang ikut mendevelop framework <b>CodeIgniter4</b> ini.
-            </p>
-            <a href="https://github.com/lonnieezell/myth-auth" class="btn btn-primary">Repository Github</a>
-        </div>
-        <div class="card-footer text-muted">
-            ranMa
+            <div class="card-footer text-muted">
+                ranMa
+            </div>
         </div>
     </div>
 </div>

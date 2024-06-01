@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 <div class="container-fluid">
     <div class="row">
-        <div class="col">
+        <div class="col m-4">
             <h1 class="mt-2">Laporan Keuangan</h1>
             <?php if (logged_in()) : ?>
                 <a class="button-29 mb-3" href="/create" role="button">Tambah Data Laporan</a>
