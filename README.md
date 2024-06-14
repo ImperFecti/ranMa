@@ -22,7 +22,7 @@ Thx to : [Bootstrap v4.5](https://getbootstrap.com/docs/4.5/getting-started/intr
 - Make sure that you have already installed all the website development requirements above.
 - [<b>Download](https://github.com/ImperFecti/ranMa/archive/refs/heads/master.zip) this project file </b> and unzip it wherever you want.
 - Or you can use <b>git bash</b> with `git bash here` to the specified folder and start cloning this repository with this command `git clone https://github.com/ImperFecti/ranMa.git`.
-- Copy and paste `env` file and rename it to `.env` to config the database and import the `database` using [`phpmyadmin`](http://localhost/phpmyadmin).
+- Copy and paste `env` file and rename it to `.env` and then paste this code to set the database.
 
 ```
 # ENVIRONMENT
@@ -48,6 +48,9 @@ database.default.DBPrefix =
 database.default.port = 3306
 ```
 
+- To import the database, go to [`phpmyadmin`](http://localhost/phpmyadmin) and create a new database named `masjid`.
+- In [`phpmyadmin`](http://localhost/phpmyadmin), select the `masjid` database you created and then select import.
+- Import the database named `masjid.sql` from the one you [downloaded](https://drive.google.com/drive/folders/1orcADcqGKPP-oWp1Ea5wPguZDqEHjKtG?usp=sharing) earlier.
 - Run `composer update` from the terminal to update the dependencies with <b>composer</b>.
 - After the update is complete, you can start developing this website.
 - This website is currently using `localhost:8080` from spark. To start the localhost with [spark](https://codeigniter.com/user_guide/cli/spark_commands.html), run this command `php spark serve` from your terminal to turn on the localhost.
