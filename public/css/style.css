@@ -1,5 +1,25 @@
-body {
-  background-image: url("../img/white-waves.webp");
+.hero {
+  background-image: url("../img/hero.png");
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: inset 0px -142px 73px -36px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 0px -142px 73px -36px rgba(255, 255, 255, 1);
+  box-shadow: inset 0px -142px 73px -36px rgba(255, 255, 255, 1);
+  color: #ffffff;
+  h1,
+  h2,
+  h5 {
+    text-shadow: #18181a 2px 5px 10px;
+    color: white;
+  }
+}
+
+.laporan-body {
+  min-height: 75vh;
+  margin: 50px;
 }
 
 footer {
@@ -11,6 +31,41 @@ nav {
   background: transparent;
   backdrop-filter: blur(10px);
   box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
+}
+
+.contact-body {
+  margin-top: 90px;
+  min-height: 74vh;
+  /* background: #eee; */
+  /* background-image: url("../img/pattern.png"); */
+}
+
+.contact-body h1,
+p {
+  text-shadow: #ffffff 2px 5px 10px;
+}
+
+.name {
+  color: blue;
+}
+
+.work {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.about span {
+  font-size: 13px;
+}
+
+.box {
+  -webkit-box-shadow: 13px 12px 5px -10px rgba(196, 194, 196, 0.72);
+  -moz-box-shadow: 13px 12px 5px -10px rgba(196, 194, 196, 0.72);
+  box-shadow: 13px 12px 5px -10px rgba(196, 194, 196, 0.72);
+}
+
+.col-md-3 {
+  margin-top: 10px;
 }
 
 /* card style */
@@ -35,108 +90,6 @@ nav {
 
 .col-sm-6 {
   display: flex;
-}
-
-/* fonts */
-h1,
-h2 {
-  font-family: "Times New Roman", Times, serif;
-}
-
-.couriernew {
-  font-family: "Courier New", Courier, monospace;
-}
-
-.gillsans {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-weight: bold;
-}
-
-.txtsh {
-  text-shadow: #00000063 0px 0px 20px;
-}
-
-/* tabel laporan */
-.table > tbody > tr > * {
-  vertical-align: middle;
-}
-
-table {
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-family: futura-pt, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  border-collapse: collapse;
-  width: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.table thead th {
-  padding: 10px 15px; /* Atur padding sesuai kebutuhan Anda */
-}
-
-.table-responsive {
-  height: 400px; /* Adjust height as needed */
-  overflow-y: auto;
-  margin-top: 20px;
-}
-
-.table-responsive table {
-  width: 100%;
-  margin-bottom: 0;
-}
-
-.table-responsive thead {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: #343a40; /* Make sure the background color matches the header */
-  color: white;
-}
-
-/* efek transisi */
-.fade-in {
-  animation: fadeInAnimation 1s ease-in forwards;
-  opacity: 0;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.delay-1 {
-  animation-delay: 0.5s;
-}
-
-.delay-2 {
-  animation-delay: 1s;
-}
-
-.delay-3 {
-  animation-delay: 1.5s;
-}
-
-.delay-4 {
-  animation-delay: 2s;
-}
-
-.delay-5 {
-  animation-delay: 2.5s;
-}
-
-.delay-6 {
-  animation-delay: 3s;
-}
-
-.delay-7 {
-  animation-delay: 3.5s;
 }
 
 /* buttons */

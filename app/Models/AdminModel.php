@@ -4,10 +4,13 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class LaporanModel extends Model
+class AdminModel extends Model
 {
-    protected $table = 'laporan';
-    protected $allowedFields = ['masuk', 'keluar', 'saldo', 'rincianmasuk', 'rinciankeluar'];
+    protected $table            = 'users';
+    protected $primaryKey       = 'id';
+    protected $useSoftDeletes   = false;
+    protected $protectFields    = true;
+    protected $allowedFields    = [];
 
     // Dates
     protected $useTimestamps = true;

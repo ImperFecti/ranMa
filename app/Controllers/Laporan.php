@@ -15,26 +15,12 @@ class Laporan extends BaseController
 
     public function index()
     {
-        // method untuk sorting data tabel laporan keuangan
-        $sortColumn = $this->request->getVar('sort') ?? 'tanggal';
-        $sortOrder = $this->request->getVar('order') ?? 'asc';
-
-        // Menambahkan validasi kolom yang diizinkan untuk diurutkan
-        $allowedSortColumns = ['tanggal', 'masuk', 'keluar'];
-
-        // Validasi kolom pengurutan
-        if (!in_array($sortColumn, $allowedSortColumns)) {
-            $sortColumn = 'tanggal';
-        }
-
         // Mengambil data dari model dengan pengurutan
-        $laporan = $this->laporanModel->orderBy($sortColumn, $sortOrder)->findAll();
+        $laporan = $this->laporanModel->findAll();
 
         $data = [
             'title' => 'Laporan',
             'laporan' => $laporan,
-            'sortColumn' => $sortColumn,
-            'sortOrder' => $sortOrder
         ];
 
         return view('laporan/index', $data);
@@ -57,7 +43,7 @@ class Laporan extends BaseController
             'saldo' => $this->request->getVar('saldo'),
             'rincianmasuk' => $this->request->getVar('rincianmasuk'),
             'rinciankeluar' => $this->request->getVar('rinciankeluar'),
-            'tanggal' => $this->request->getVar('tanggal')
+            'created_at' => $this->request->getVar('tanggal'),
         ]);
 
         return redirect()->to('/laporan');

@@ -6,14 +6,14 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 
-//route to codeigniter welcome message
-$routes->get('/codeigniter', 'Home::codeigniter');
-
 //home route
 $routes->get('/', 'Home::index');
-$routes->get('/about', 'Home::about');
 $routes->get('/contact', 'Home::contact');
 //laporan route
 $routes->get('/laporan', 'Laporan::index');
 $routes->get('/create', 'Laporan::create');
 $routes->post('/save', 'Laporan::save');
+// admin
+$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin, superadmin']);
+$routes->get('/tableadmin', 'Admin::tableadmin', ['filter' => 'role:superadmin']);
+$routes->get('/tablelaporan', 'Admin::tablelaporan', ['filter' => 'role:admin, superadmin']);

@@ -32,10 +32,6 @@
                     <label for="rinciankeluar">Rincian Pengeluaran</label>
                     <input type="text" class="form-control" id="rinciankeluar" name="rinciankeluar">
                 </div>
-                <div class="form-group">
-                    <label for="tanggal">Tanggal</label>
-                    <input type="date" class="form-control" id="tanggal" name="tanggal">
-                </div>
                 <button type="submit" class="button-33" role="button">Submit</button>
             </form>
 

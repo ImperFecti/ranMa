@@ -30,13 +30,4 @@ class Home extends BaseController
         ];
         return view('pages/contact', $data);
     }
-
-    // route method halaman dokumentasi framework codeigniter 4
-    public function codeigniter()
-    {
-        $data = [
-            'title' => 'ranMa | Framework Codeigniter 4'
-        ];
-        return view('pages/welcome_message');
-    }
 }
