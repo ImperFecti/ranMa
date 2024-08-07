@@ -13,24 +13,9 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Dashboard</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Dashboard</li>
+                    <li class="breadcrumb-item active">Selamat datang kembali, <b><?= $admin['username']; ?></b> !!</li>
                 </ol>
                 <div class="row">
-                    <div class="col-md-3 mb-4">
-                        <?php if (in_groups("superadmin")) : ?>
-                            <div class="card dashboard h-100">
-                                <a href="/tableadmin" class="custom-link">
-                                    <div class="card-body text-center">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
-                                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
-                                        </svg>
-                                        <h5 class="card-title">Akun Admin</h5>
-                                        <p class="card-text">Mengatur Akun Admin Yang Terdaftar</p>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php endif; ?>
-                    </div>
                     <div class="col-md-3 mb-4">
                         <div class="card dashboard h-100">
                             <a href="/tablelaporan" class="custom-link">
@@ -46,6 +31,21 @@
                                 </div>
                             </a>
                         </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <?php if (in_groups("superadmin")) : ?>
+                            <div class="card dashboard h-100">
+                                <a href="/tableadmin" class="custom-link">
+                                    <div class="card-body text-center">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+                                            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" />
+                                        </svg>
+                                        <h5 class="card-title">Akun Admin</h5>
+                                        <p class="card-text">Mengatur Akun Admin Yang Terdaftar</p>
+                                    </div>
+                                </a>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

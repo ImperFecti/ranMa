@@ -24,8 +24,18 @@ class Admin extends BaseController
 
     public function index()
     {
+        $auth = service('authentication');
+        if (!$auth->isLoggedIn()) {
+            return redirect()->to('/login');
+        }
+
+        $adminId = $auth->id();
+        $adminModel = new AdminModel();
+        $admin = $adminModel->find($adminId);
+
         $data = [
             'title' => 'Admin Masjid | ranMa',
+            'admin' => $admin,
         ];
 
         return view('pages/admin/index', $data);

@@ -17,196 +17,147 @@
   }
 }
 
-.laporan-body {
-  min-height: 75vh;
+/* Laporan Style */
+.container-card {
+  min-height: 100vh;
   margin: 50px;
 }
 
+.laporan-body {
+  margin: 20px;
+}
+
+/* Footer */
 footer {
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.45) 0px -15px 20px -20px;
 }
 
+/* Navbar */
 nav {
   background: transparent;
   backdrop-filter: blur(10px);
   box-shadow: rgba(0, 0, 0, 0.45) 0px 15px 20px -20px;
 }
 
-.contact-body {
-  margin-top: 90px;
-  min-height: 74vh;
-  /* background: #eee; */
-  /* background-image: url("../img/pattern.png"); */
+/* Contact Style */
+.team-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
-.contact-body h1,
-p {
-  text-shadow: #ffffff 2px 5px 10px;
+.team-section h1 {
+  margin-bottom: 20px;
 }
 
-.name {
-  color: blue;
+.team-section p {
+  margin-bottom: 40px;
+  color: #666;
 }
 
-.work {
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.about span {
-  font-size: 13px;
-}
-
-.box {
-  -webkit-box-shadow: 13px 12px 5px -10px rgba(196, 194, 196, 0.72);
-  -moz-box-shadow: 13px 12px 5px -10px rgba(196, 194, 196, 0.72);
-  box-shadow: 13px 12px 5px -10px rgba(196, 194, 196, 0.72);
-}
-
-.col-md-3 {
-  margin-top: 10px;
-}
-
-/* card style */
-.card-body {
-  flex-grow: 1;
-  background-image: url("../img/webb.png");
-  background-blend-mode: overlay;
-}
-
-.card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
-
-.row {
+.team-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.col-sm-6 {
+.team-member {
   display: flex;
-}
-
-/* buttons */
-.button-24 {
-  background: #ff4742;
-  border: 1px solid #ff4742;
-  border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
-  box-sizing: border-box;
-  color: #ffffff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
-  font-size: 16px;
-  font-weight: 800;
-  line-height: 16px;
-  min-height: 40px;
-  outline: 0;
-  padding: 12px 14px;
-  text-align: center;
-  text-rendering: geometricprecision;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-}
-
-.button-24:hover,
-.button-24:active {
-  background-color: initial;
-  background-position: 0 0;
-  color: #ff4742;
-}
-
-.button-24:active {
-  opacity: 0.5;
-}
-
-.button-29 {
+  flex-direction: column;
   align-items: center;
-  appearance: none;
-  background-image: radial-gradient(
-    100% 100% at 100% 0,
-    #5adaff 0,
-    #5468ff 100%
-  );
-  border: 0;
-  border-radius: 6px;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono", monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
+  width: 30%;
+  margin-bottom: 40px;
   text-align: left;
-  text-decoration: none;
-  transition: box-shadow 0.15s, transform 0.15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
-  font-size: 18px;
 }
 
-.button-29:focus {
-  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+.team-member img {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
 }
 
-.button-29:hover {
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
-    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
-  transform: translateY(-2px);
+.team-member h2 {
+  margin: 15px 0 5px 0;
 }
 
-.button-29:active {
-  box-shadow: #3c4fe0 0 3px 7px inset;
-  transform: translateY(2px);
+.team-member h3 {
+  margin: 0 0 15px 0;
+  font-weight: normal;
+  color: #777;
 }
 
-.button-33 {
-  background-color: #c2fbd7;
-  border-radius: 100px;
-  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
-    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
-    rgba(44, 187, 99, 0.15) 0 16px 32px;
-  color: green;
+.team-member p {
+  color: #333;
+}
+
+@media screen and (max-width: 768px) {
+  .team-member {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team-container {
+    flex-direction: column;
+  }
+
+  .team-member {
+    width: 100%;
+  }
+}
+
+/* FAQ Style */
+.faq-section {
+  padding: 40px 20px;
+}
+.faq-section h1 {
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  color: #333;
+}
+.faq-container {
+  margin: 0 auto;
+  border-top: 1px solid #ddd;
+}
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 30px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: #fff;
   cursor: pointer;
-  display: inline-block;
-  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
-  padding: 7px 20px;
-  text-align: center;
-  text-decoration: none;
-  transition: all 250ms;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.faq-answer {
+  display: none;
+  padding: 15px 20px;
+  background-color: #fff;
+}
+.faq-question::after {
+  content: "+";
+  font-size: 1.2rem;
+  color: #666;
+}
+.faq-question.active::after {
+  content: "-";
 }
 
-.button-33:hover {
-  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
-    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
-    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
-    rgba(44, 187, 99, 0.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+/* CSS for fade in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.show {
+  opacity: 1;
 }
