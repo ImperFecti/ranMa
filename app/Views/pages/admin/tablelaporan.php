@@ -12,6 +12,16 @@
         <main>
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Data Keuangan Masjid Al-Hidayah</h1>
+                <?php if (session()->getFlashdata('message')) : ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('message') ?>
+                    </div>
+                <?php endif; ?>
+                <?php if (session()->getFlashdata('error')) : ?>
+                    <div class="alert alert-danger">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
                 <div class="card mb-4">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
@@ -20,7 +30,7 @@
                                 Laporan Data Keuangan Masjid
                             </div>
                             <div>
-                                <button type="button" class="btn btn-primary">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTambahLaporan">
                                     Tambah Laporan
                                 </button>
                             </div>
@@ -49,60 +59,61 @@
                                         <td>Rp.<?= esc($l['masuk']); ?></td>
                                         <td>Rp.<?= esc($l['keluar']); ?></td>
                                         <td>Rp.<?= esc($l['saldo']); ?></td>
+                                        <td><?= esc($l['rincianmasuk']); ?></td>
+                                        <td><?= esc($l['rinciankeluar']); ?></td>
                                         <td>
-                                            <button class="btn btn-link toggle-detail" data-toggle="modal" data-target="#rincianPemasukan<?= $i ?>">Lihat Rincian Pemasukan</button>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-link toggle-detail" data-toggle="modal" data-target="#rincianPengeluaran<?= $i ?>">Lihat Rincian Pengeluaran</button>
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="btn btn-danger btn-sm">
-                                                Delete
-                                            </button>
-                                            <button type="button" class="btn btn-warning btn-sm">
+                                            <form action="<?= base_url('admin/deletelaporan'); ?>" method="post" style="display:inline;">
+                                                <?= csrf_field(); ?>
+                                                <input type="hidden" name="id" value="<?= $l['id']; ?>">
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this report?');">Delete</button>
+                                            </form>
+                                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalUbahLaporan<?= $l['id']; ?>">
                                                 Ubah
                                             </button>
                                         </td>
                                     </tr>
-                                    <!-- Modal Rincian Pemasukan -->
-                                    <div class="modal fade" id="rincianPemasukan<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="rincianPemasukanLabel<?= $i ?>" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="rincianPemasukanLabel<?= $i ?>">Rincian Pemasukan</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <?= esc($l['rincianmasuk']); ?>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Modal Rincian Pengeluaran -->
-                                    <div class="modal fade" id="rincianPengeluaran<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="rincianPengeluaranLabel<?= $i ?>" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="rincianPengeluaranLabel<?= $i ?>">Rincian Pengeluaran</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <?= esc($l['rinciankeluar']); ?>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                     <?php $i++; ?>
+                                    <!-- Modal Ubah Laporan -->
+                                    <div class="modal fade" id="modalUbahLaporan<?= $l['id']; ?>" tabindex="-1" aria-labelledby="modalUbahLaporanLabel<?= $l['id']; ?>" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalUbahLaporanLabel<?= $l['id']; ?>">Ubah Laporan Keuangan</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <form action="<?= base_url('admin/updatelaporan'); ?>" method="post">
+                                                    <div class="modal-body">
+                                                        <?= csrf_field(); ?>
+                                                        <input type="hidden" name="id" value="<?= $l['id']; ?>">
+                                                        <div class="mb-3">
+                                                            <label for="masuk" class="form-label">Pemasukan</label>
+                                                            <input type="text" class="form-control" id="masuk" name="masuk" value="<?= esc($l['masuk']); ?>" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="keluar" class="form-label">Pengeluaran</label>
+                                                            <input type="text" class="form-control" id="keluar" name="keluar" value="<?= esc($l['keluar']); ?>" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="saldo" class="form-label">Saldo</label>
+                                                            <input type="text" class="form-control" id="saldo" name="saldo" value="<?= esc($l['saldo']); ?>" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="rincianmasuk" class="form-label">Rincian Pemasukan</label>
+                                                            <textarea class="form-control" id="rincianmasuk" name="rincianmasuk" rows="3" required><?= esc($l['rincianmasuk']); ?></textarea>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="rinciankeluar" class="form-label">Rincian Pengeluaran</label>
+                                                            <textarea class="form-control" id="rinciankeluar" name="rinciankeluar" rows="3" required><?= esc($l['rinciankeluar']); ?></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Ubah Laporan</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
@@ -116,5 +127,47 @@
 
     </div>
 </div>
+
+<!-- Modal Tambah Laporan -->
+<div class="modal fade" id="modalTambahLaporan" tabindex="-1" aria-labelledby="modalTambahLaporanLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTambahLaporanLabel">Tambah Laporan Keuangan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form action="<?= base_url('admin/tambahlaporan'); ?>" method="post">
+                <div class="modal-body">
+                    <?= csrf_field(); ?>
+                    <div class="mb-3">
+                        <label for="masuk" class="form-label">Pemasukan</label>
+                        <input type="text" class="form-control" id="masuk" name="masuk" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="keluar" class="form-label">Pengeluaran</label>
+                        <input type="text" class="form-control" id="keluar" name="keluar" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="saldo" class="form-label">Saldo</label>
+                        <input type="text" class="form-control" id="saldo" name="saldo" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rincianmasuk" class="form-label">Rincian Pemasukan</label>
+                        <textarea class="form-control" id="rincianmasuk" name="rincianmasuk" rows="3" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="rinciankeluar" class="form-label">Rincian Pengeluaran</label>
+                        <textarea class="form-control" id="rinciankeluar" name="rinciankeluar" rows="3" required></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Tambah Laporan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 <?= $this->endSection(); ?>
 <!-- End of content section -->

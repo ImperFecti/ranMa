@@ -11,13 +11,13 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Data Keuangan Masjid Al-Hidayah</h1>
+                <h1 class="mt-4">Data Akun Admin</h1>
                 <div class="card mb-4">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <i class="fas fa-table me-1"></i>
-                                Laporan Data Keuangan Masjid
+                                Manajemen Akun Administrator Masjid
                             </div>
                             <div>
                                 <button type="button" class="btn btn-primary">

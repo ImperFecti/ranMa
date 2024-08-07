@@ -37,15 +37,15 @@
                     <td>Rp.<?= esc($l['keluar']); ?></td>
                     <td>Rp.<?= esc($l['saldo']); ?></td>
                     <td>
-                        <button class="btn btn-link toggle-detail" data-toggle="modal" data-target="#rincianPemasukan<?= $i ?>">Lihat Rincian Pemasukan</button>
+                        <button class="btn btn-primary toggle-detail" data-toggle="modal" data-target="#rincianPemasukan<?= $i ?>">Lihat Rincian Pemasukan</button>
                     </td>
                     <td>
-                        <button class="btn btn-link toggle-detail" data-toggle="modal" data-target="#rincianPengeluaran<?= $i ?>">Lihat Rincian Pengeluaran</button>
+                        <button class="btn btn-primary toggle-detail" data-toggle="modal" data-target="#rincianPengeluaran<?= $i ?>">Lihat Rincian Pengeluaran</button>
                     </td>
                 </tr>
                 <!-- Modal Rincian Pemasukan -->
                 <div class="modal fade" id="rincianPemasukan<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="rincianPemasukanLabel<?= $i ?>" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="rincianPemasukanLabel<?= $i ?>">Rincian Pemasukan</h5>
@@ -64,7 +64,7 @@
                 </div>
                 <!-- Modal Rincian Pengeluaran -->
                 <div class="modal fade" id="rincianPengeluaran<?= $i ?>" tabindex="-1" role="dialog" aria-labelledby="rincianPengeluaranLabel<?= $i ?>" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="rincianPengeluaranLabel<?= $i ?>">Rincian Pengeluaran</h5>

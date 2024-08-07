@@ -33,19 +33,4 @@ class Laporan extends BaseController
         ];
         return view('laporan/create', $data);
     }
-
-    // method untuk input data ke database
-    public function save()
-    {
-        $this->laporanModel->save([
-            'masuk' => $this->request->getVar('masuk'),
-            'keluar' => $this->request->getVar('keluar'),
-            'saldo' => $this->request->getVar('saldo'),
-            'rincianmasuk' => $this->request->getVar('rincianmasuk'),
-            'rinciankeluar' => $this->request->getVar('rinciankeluar'),
-            'created_at' => $this->request->getVar('tanggal'),
-        ]);
-
-        return redirect()->to('/laporan');
-    }
 }
