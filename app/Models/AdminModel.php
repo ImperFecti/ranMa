@@ -10,7 +10,7 @@ class AdminModel extends Model
     protected $primaryKey       = 'id';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = [];
+    protected $allowedFields    = ['email', 'username', 'active', 'password_hash'];
 
     // Dates
     protected $useTimestamps = true;

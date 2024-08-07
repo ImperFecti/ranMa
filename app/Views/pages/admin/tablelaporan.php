@@ -65,7 +65,7 @@
                                             <form action="<?= base_url('admin/deletelaporan'); ?>" method="post" style="display:inline;">
                                                 <?= csrf_field(); ?>
                                                 <input type="hidden" name="id" value="<?= $l['id']; ?>">
-                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this report?');">Delete</button>
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah anda yakin ingin menghapus data laporan ini ?');">Delete</button>
                                             </form>
                                             <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#modalUbahLaporan<?= $l['id']; ?>">
                                                 Ubah

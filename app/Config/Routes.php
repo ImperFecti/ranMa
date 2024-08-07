@@ -15,6 +15,11 @@ $routes->get('/laporan', 'Laporan::index');
 $routes->get('/create', 'Laporan::create');
 $routes->post('/save', 'Laporan::save');
 
+//  superadmin
+$routes->post('admin/tambahadmin', 'Admin::tambahadmin', ['filter' => 'role:superadmin']);
+$routes->post('admin/updateadmin/(:num)', 'Admin::updateadmin/$1', ['filter' => 'role:superadmin']);
+$routes->post('admin/deleteadmin', 'Admin::deleteadmin', ['filter' => 'role:superadmin']);
+
 // admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin, superadmin']);
 $routes->get('/tableadmin', 'Admin::tableadmin', ['filter' => 'role:superadmin']);

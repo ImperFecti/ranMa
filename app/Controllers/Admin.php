@@ -6,6 +6,7 @@ use App\Controllers\BaseController;
 use App\Models\AdminModel;
 use App\Models\LaporanModel;
 use App\Models\SuperAdminModel;
+use Myth\Auth\Password;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class Admin extends BaseController
@@ -30,9 +31,13 @@ class Admin extends BaseController
         return view('pages/admin/index', $data);
     }
 
+    // TABLE ADMIN (ROLE SUPERADMIN)
     public function tableadmin()
     {
-        $admin = $this->SuperAdminModel->findAll();
+        $auth = service('authentication');
+        $id = $auth->id();
+
+        $admin = $this->SuperAdminModel->getAdminUsers($id);
 
         $data = [
             'title' => 'Admin Masjid | ranMa',
@@ -41,6 +46,55 @@ class Admin extends BaseController
         return view('pages/admin/tableadmin', $data);
     }
 
+    public function tambahadmin()
+    {
+        $authorize = service('authorization'); // Call authorization service
+
+        $data = [
+            'username' => $this->request->getPost('username'), // Get username input
+            'email' => $this->request->getPost('email'), // Get email input
+            'password_hash' => Password::hash($this->request->getPost('password')), // Hash password
+            'active' => 1, // Set user as active by default
+        ];
+
+        // Insert user and get the user ID
+        $adminModel = new AdminModel();
+        $adminId = $adminModel->insert($data, true); // The second parameter 'true' returns the insert ID
+
+        // Assign default user group
+        if ($adminId) {
+            $authorize->addUserToGroup($adminId, config('Auth')->defaultUserGroup);
+        }
+
+        return redirect()->to('/tableadmin')->with('message', 'User successfully added.'); // Redirect with success message
+    }
+
+    public function updateadmin($id)
+    {
+        $data = [
+            'email' => $this->request->getPost('email'), // Get email input
+            'username' => $this->request->getPost('username'), // Get username input
+            'active' => $this->request->getPost('active'), // Get active input
+        ];
+
+        $this->AdminModel->update($id, $data); // Update user data
+        return redirect()->to('/tableadmin')->with('message', 'Data Admin berhasil diubah.');
+    }
+
+    public function deleteadmin()
+    {
+        $id = $this->request->getPost('id');
+        $data_admin = $this->SuperAdminModel->find($id);
+
+        if ($data_admin) {
+            $this->SuperAdminModel->delete($id);
+            return redirect()->to('/tableadmin')->with('message', 'Admin berhasil dihapus.');
+        } else {
+            return redirect()->to('/tableadmin')->with('message', 'Admin tidak ditemukan.');
+        }
+    }
+
+    // TABLE LAPORAN KEUANGAN (ROLE ADMIN)
     public function tablelaporan()
     {
         $laporan = $this->laporanModel->findAll();
