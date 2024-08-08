@@ -5,20 +5,18 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\AdminModel;
 use App\Models\LaporanModel;
-use App\Models\SuperAdminModel;
 use Myth\Auth\Password;
+use Myth\Auth\Models\UserModel;
 use CodeIgniter\HTTP\ResponseInterface;
 
 class Admin extends BaseController
 {
     protected $laporanModel;
-    protected $SuperAdminModel;
     protected $AdminModel;
 
     public function __construct()
     {
         $this->laporanModel = new LaporanModel();
-        $this->SuperAdminModel = new SuperAdminModel();
         $this->AdminModel = new AdminModel();
     }
 
@@ -41,13 +39,60 @@ class Admin extends BaseController
         return view('pages/admin/index', $data);
     }
 
+    public function ubahpassword()
+    {
+        $auth = service('authentication');
+        $id = $auth->id();
+
+        $admin = $this->AdminModel->find($id);
+
+        $data = [
+            'title' => 'Ubah Password | ranMa',
+            'admin' => $admin,
+        ];
+
+        return view('pages/admin/ubahpassword', $data);
+    }
+
+    public function updatepassword($id)
+    {
+        // Validation rules
+        $rules = [
+            'password' => 'required|min_length[8]',
+            'new_password' => 'required|min_length[8]',
+            'password_confirm' => 'matches[new_password]',
+        ];
+
+        // Validate input
+        if (!$this->validate($rules)) {
+            return redirect()->to('/ubahpassword')->withInput()->with('validation', $this->validator);
+        }
+
+        // Get current user ID
+        $userModel = new UserModel();
+        $admin = $userModel->find($id);
+        $currentPassword = $this->request->getVar('password');
+
+        // Verify current password
+        if (!Password::verify($currentPassword, $admin->password_hash)) {
+            return redirect()->to('/ubahpassword')->with('error', 'Password lama salah.');
+        }
+
+        // Update password
+        $newPassword = Password::hash($this->request->getVar('new_password')); // Hash new password
+        $userModel->update($id, ['password_hash' => $newPassword]); // Update password ($id, ['password_hash' => $newPassword]);
+
+        session()->setFlashdata('success', 'Password berhasil diubah.');
+        return redirect()->to('/ubahpassword')->with('success', 'Password berhasil diubah.');
+    }
+
     // TABLE ADMIN (ROLE SUPERADMIN)
     public function tableadmin()
     {
         $auth = service('authentication');
         $id = $auth->id();
 
-        $admin = $this->SuperAdminModel->getAdminUsers($id);
+        $admin = $this->AdminModel->getAdminUsers($id);
 
         $data = [
             'title' => 'Admin Masjid | ranMa',
@@ -61,10 +106,10 @@ class Admin extends BaseController
         $authorize = service('authorization'); // Call authorization service
 
         $data = [
-            'username' => $this->request->getPost('username'), // Get username input
-            'email' => $this->request->getPost('email'), // Get email input
-            'password_hash' => Password::hash($this->request->getPost('password')), // Hash password
-            'active' => 1, // Set user as active by default
+            'username' => esc($this->request->getPost('username')), // Get username input
+            'email' => esc($this->request->getPost('email')), // Get email input
+            'password_hash' => esc(Password::hash($this->request->getPost('password'))), // Hash password
+            'active' => esc(1), // Set user as active by default
         ];
 
         // Insert user and get the user ID
@@ -82,9 +127,9 @@ class Admin extends BaseController
     public function updateadmin($id)
     {
         $data = [
-            'email' => $this->request->getPost('email'), // Get email input
-            'username' => $this->request->getPost('username'), // Get username input
-            'active' => $this->request->getPost('active'), // Get active input
+            'email' => esc($this->request->getPost('email')), // Get email input
+            'username' => esc($this->request->getPost('username')), // Get username input
+            'active' => esc($this->request->getPost('active')), // Get active input
         ];
 
         $this->AdminModel->update($id, $data); // Update user data
@@ -94,10 +139,10 @@ class Admin extends BaseController
     public function deleteadmin()
     {
         $id = $this->request->getPost('id');
-        $data_admin = $this->SuperAdminModel->find($id);
+        $data_admin = $this->AdminModel->find($id);
 
         if ($data_admin) {
-            $this->SuperAdminModel->delete($id);
+            $this->AdminModel->delete($id);
             return redirect()->to('/tableadmin')->with('message', 'Admin berhasil dihapus.');
         } else {
             return redirect()->to('/tableadmin')->with('message', 'Admin tidak ditemukan.');
@@ -119,11 +164,11 @@ class Admin extends BaseController
     public function tambahlaporan()
     {
         $this->laporanModel->save([
-            'masuk' => $this->request->getVar('masuk'),
-            'keluar' => $this->request->getVar('keluar'),
-            'saldo' => $this->request->getVar('saldo'),
-            'rincianmasuk' => $this->request->getVar('rincianmasuk'),
-            'rinciankeluar' => $this->request->getVar('rinciankeluar'),
+            'masuk' => esc($this->request->getVar('masuk')),
+            'keluar' => esc($this->request->getVar('keluar')),
+            'saldo' => esc($this->request->getVar('saldo')),
+            'rincianmasuk' => esc($this->request->getVar('rincianmasuk')),
+            'rinciankeluar' => esc($this->request->getVar('rinciankeluar')),
         ]);
 
         return redirect()->to('/tablelaporan')->with('message', 'Laporan berhasil ditambahkan.');
@@ -134,11 +179,11 @@ class Admin extends BaseController
         $id = $this->request->getVar('id');
 
         $this->laporanModel->update($id, [
-            'masuk' => $this->request->getVar('masuk'),
-            'keluar' => $this->request->getVar('keluar'),
-            'saldo' => $this->request->getVar('saldo'),
-            'rincianmasuk' => $this->request->getVar('rincianmasuk'),
-            'rinciankeluar' => $this->request->getVar('rinciankeluar'),
+            'masuk' => esc($this->request->getVar('masuk')),
+            'keluar' => esc($this->request->getVar('keluar')),
+            'saldo' => esc($this->request->getVar('saldo')),
+            'rincianmasuk' => esc($this->request->getVar('rincianmasuk')),
+            'rinciankeluar' => esc($this->request->getVar('rinciankeluar')),
         ]);
 
         return redirect()->to('/tablelaporan')->with('message', 'Laporan berhasil diubah.');

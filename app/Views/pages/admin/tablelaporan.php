@@ -36,7 +36,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body" id="laporanTable">
                         <table id="datatablesSimple">
                             <thead class="thead-dark">
                                 <tr>
@@ -94,10 +94,6 @@
                                                             <input type="text" class="form-control" id="keluar" name="keluar" value="<?= esc($l['keluar']); ?>" required>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="saldo" class="form-label">Saldo</label>
-                                                            <input type="text" class="form-control" id="saldo" name="saldo" value="<?= esc($l['saldo']); ?>" required>
-                                                        </div>
-                                                        <div class="mb-3">
                                                             <label for="rincianmasuk" class="form-label">Rincian Pemasukan</label>
                                                             <textarea class="form-control" id="rincianmasuk" name="rincianmasuk" rows="3" required><?= esc($l['rincianmasuk']); ?></textarea>
                                                         </div>
@@ -146,10 +142,6 @@
                     <div class="mb-3">
                         <label for="keluar" class="form-label">Pengeluaran</label>
                         <input type="text" class="form-control" id="keluar" name="keluar" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="saldo" class="form-label">Saldo</label>
-                        <input type="text" class="form-control" id="saldo" name="saldo" required>
                     </div>
                     <div class="mb-3">
                         <label for="rincianmasuk" class="form-label">Rincian Pemasukan</label>

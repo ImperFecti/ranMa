@@ -22,6 +22,32 @@ document.addEventListener("DOMContentLoaded", function () {
   checkFadeIn(); // Initial check in case elements are already in view
 });
 
+function formatRupiah(angka) {
+  let number_string = angka.replace(/[^,\d]/g, "").toString(),
+    split = number_string.split(","),
+    sisa = split[0].length % 3,
+    rupiah = split[0].substr(0, sisa),
+    ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+  if (ribuan) {
+    let separator = sisa ? "." : "";
+    rupiah += separator + ribuan.join(".");
+  }
+
+  return "Rp. " + rupiah + (split[1] != undefined ? "," + split[1] : "");
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const formatRupiahElements = document.querySelectorAll(
+    "#datatablesSimple tbody tr td:nth-child(3), #datatablesSimple tbody tr td:nth-child(4), #datatablesSimple tbody tr td:nth-child(5)"
+  );
+
+  formatRupiahElements.forEach(function (element) {
+    let angka = element.textContent;
+    element.textContent = formatRupiah(angka.trim());
+  });
+});
+
 document.querySelectorAll(".faq-question").forEach((button) => {
   button.addEventListener("click", () => {
     const answer = button.nextElementSibling;

@@ -26,7 +26,7 @@
                                         <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083q.088-.517.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1z" />
                                         <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 6 6 0 0 1 3.13-1.567" />
                                     </svg>
-                                    <h5 class="card-title">Data Laporan Keuangan Masjid</h5>
+                                    <h5 class="card-title">Laporan Keuangan Masjid</h5>
                                     <p class="card-text">Mengatur Data Laporan Keuangan Milik Masjid</p>
                                 </div>
                             </a>

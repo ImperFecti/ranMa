@@ -12,13 +12,15 @@ $routes->get('/contact', 'Home::contact');
 
 // laporan route
 $routes->get('/laporan', 'Laporan::index');
-$routes->get('/create', 'Laporan::create');
-$routes->post('/save', 'Laporan::save');
 
-//  superadmin
+// superadmin
 $routes->post('admin/tambahadmin', 'Admin::tambahadmin', ['filter' => 'role:superadmin']);
 $routes->post('admin/updateadmin/(:num)', 'Admin::updateadmin/$1', ['filter' => 'role:superadmin']);
 $routes->post('admin/deleteadmin', 'Admin::deleteadmin', ['filter' => 'role:superadmin']);
+
+// superadmin and admin can access
+$routes->get('/ubahpassword', 'Admin::ubahpassword', ['filter' => 'role:admin, superadmin']);
+$routes->post('/updatepassword/(:num)', 'Admin::updatepassword/$1', ['filter' => 'role:admin, superadmin']);
 
 // admin
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin, superadmin']);

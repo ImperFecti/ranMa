@@ -29,8 +29,13 @@
 
 /* Footer */
 footer {
-  background-color: white;
   box-shadow: rgba(0, 0, 0, 0.45) 0px -15px 20px -20px;
+}
+
+.cta-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Navbar */
